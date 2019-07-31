@@ -1,9 +1,9 @@
 const sessionKey = 'session';
 
 export interface IProvider<T> {
-	setTenantId(tenantId: String): String;
-	setClientId(clientId: String): String;
-	setClientSecret(clientSecret: String): String;
+	tenantId: String;
+	clientId: String;
+	clientSecret: String;
 	buildAuthorizeUrl(): string;
 	extractError(redirectUrl: string): Error | undefined;
 	extractSession(redirectUrl: string): T;
